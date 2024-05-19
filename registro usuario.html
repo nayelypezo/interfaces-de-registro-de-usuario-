@@ -3,29 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro e Inicio de Sesión</title>
+  <title>Registro de Usuario</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        <h2>Registro de Usuario</h2>
-      </div>
-      <div class="card-body">
-        <form id="registration-form">
-          <input type="text" id="name" placeholder="Nombre completo" required>
-          <input type="email" id="email" placeholder="Correo electrónico" required>
-          <input type="password" id="password" placeholder="Contraseña" required>
-          <button type="submit">Registrarse</button>
-        </form>
-        <div id="message"></div>
-        <p>¿Ya tienes una cuenta? <a href="inicio_sesion.html">Inicia Sesión</a></p>
+<body>  
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+              <h2>Registro de Usuario</h2>
+               
+              </div>
+            <div class="card-body">
+                <form id="register-form" class="form" onsubmit="return validateForm()">
+                <label for="fullname">Nombre Completo:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Nombre Completo (solo letras)" pattern="[A-Za-záéíóúÁÉÍÓÚñÑ\s]+" required>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" placeholder="Contraseña (Mínimo 8 caracteres, al menos una mayúscula, una minúscula, un número y un carácter especial)" required>
+                <label for="confirm-password">Confirmar Contraseña:</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirmar Contraseña" required>
+                <button type="submit">Registrar</button>
+              </form>
+            
+  </div>
+              <p id="restriction-message" style="display:none; color:red;"></p>
+              <p id="success-message" style="display:none; color:green;">Registro exitoso. Gracias por registrarte.</p>
+              <p>Ya tienes una cuenta. Haz clic <a href="inicio_sesion.html">aquí</a> para iniciar sesión.</p>
+            </div>
+        </div>
     </div>
-    <div id="message"></div>
-    <script src="script.js"></script>
-  </body>
-  </html>
-  
+    
+    <script>
+        // Mostrar mensaje de restricciones al hacer clic en una celda
+        document.querySelectorAll('.form input').forEach(input => {
+            input.addEventListener('click', function() {
+                var restrictionMessage = this.getAttribute('data-restriction');
+                if (restrictionMessage) {
+                    document.getElementById('restriction-message').textContent = restrictionMessage;
+                    document.getElementById('restriction-message').style.display = 'block';
+                } else {
+                    document.getElementById('restriction-message').style.display = 'none';
+                }
+            });
+        });
 
-  
+        function validateForm() {
+            var fullname = document.getElementById("fullname").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            var passwordRegex = /^(?=.*\d)(?=.*[a-záéíóú])(?=.*[A-ZÁÉÍÓÚ])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+
+            if (fullname === "" || email === "" || password === "" || confirmPassword === "") {
+                alert("Por favor, complete todos los campos.");
+                return false;
+            }
+
+            if (!email.includes("@")) {
+                alert("El correo electrónico debe ser válido.");
+                return false;
+            }
+
+            if (!fullname.match(/^[A-Za-záéíóúÁÉÍÓÚñÑ\s]+$/)) {
+                alert("El nombre solo puede contener letras.");
+                return false;
+            }
+
+            if (!password.match(passwordRegex)) {
+                alert("La contraseña debe contener al menos 8 caracteres, incluyendo al menos una mayúscula, una minúscula, un número y un carácter especial.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Las contraseñas no coinciden.");
+                return false;
+            }
+
+            document.getElementById("register-form").style.display = "none";
+            document.getElementById("success-message").style.display = "block";
+            return false; // Evitar que el formulario se envíe realmente
+        }
+    </script>
+</body>
+</html>

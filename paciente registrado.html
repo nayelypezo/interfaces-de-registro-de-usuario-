@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pacientes</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <div class="formulario-container">
+            <div id="nuevoPacienteForm" class="formulario">
+                <h3> Paciente registrado</h3>
+                <form id="registroForm">
+                    <label for="nombreRegistrado">Nombre:</label>
+                    <input type="text" id="nombreRegistrado" required>
+                    
+                    <label for="cedulaRegistrado">Cédula:</label>
+                    <input type="text" id="cedulaRegistrado" required>
+                    
+                    <button type="submit">Ingresar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Objeto que simula una base de datos de usuarios y contraseñas
+        var usuarios = {
+            "nayelypezo": {"contraseña": "1316315819", "pagina": "paginaprincipalpaciente1.html"},
+        
+            // Agrega más usuarios según sea necesario
+        };
+
+        document.getElementById("registroForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            // Obtiene los valores de los campos de entrada
+            var nombre = document.getElementById("nombreRegistrado").value;
+            var cedula = document.getElementById("cedulaRegistrado").value;
+
+            // Validación básica: nombre y cédula no deben estar vacíos
+            if (nombre.trim() === "" || cedula.trim() === "") {
+                alert("Por favor, complete todos los campos.");
+                return;
+            }
+
+            // Validación de credenciales
+            if (usuarios[nombre] && usuarios[nombre]["contraseña"] === cedula) {
+                var pagina = usuarios[nombre]["pagina"];
+                window.location.href = pagina; // Redirecciona a la página correspondiente al usuario
+            } else {
+                alert("Credenciales inválidas. Por favor, inténtelo de nuevo.");
+            }
+        });
+    </script>
+</body>
+</html>

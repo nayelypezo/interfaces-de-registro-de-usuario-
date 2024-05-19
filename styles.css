@@ -1,61 +1,60 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('https://img.freepik.com/vector-gratis/diseno-patron-infinito-dentistas_23-2148157007.jpg?size=626&ext=jpg');
-    background-size: cover;
-  }
-  
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .card {
-    background-color: #fff;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(161, 235, 26, 0.2);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card-header {
-    background-color: #00f7ff;
-    color: #fff;
-    padding: 20px;
-  }
-  
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://img.freepik.com/vector-gratis/fondo-azul-ondas-abstractas_1393-258.jpg?w=826&t=st=1715808783~exp=1715809383~hmac=7a6d127762b157ef3810b5012941c835cb774951c5f55bdebf6cf5704c4b1d9b');
+  background-size: cover;
+}
 
-  .card-body {
-    padding: 20px;
-  }
-  
-  input, button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #352c2c;
-    border-radius: 5px;
-  }
-  
-  button {
-    background-color: #70cec9;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #75bb04;
-  }
-  
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(161, 235, 26, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  max-width: 400px; /* Anchura máxima del formulario */
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  background-color: #57ffdb;
+  color: #fff;
+  padding: 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+input, button {
+  width: calc(100% - 22px); /* Reducir el ancho de las celdas */
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #352c2c;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #82fcdd;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #75bb04;
+}

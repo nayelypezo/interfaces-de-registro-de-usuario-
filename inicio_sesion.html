@@ -10,15 +10,18 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-              <h2>iniciar sesion</h2>
+              <h2>Iniciar Sesión</h2>
             </div>
             <div class="card-body">
+              <form id="login-form" class="form">
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="button" onclick="login()">Iniciar Sesión</button>
+              </form>
+            </div>
+        </div>
     </div>
-  <form id="login-form" class="form">
-    <input type="email" id="login-email" placeholder="Correo electrónico" required>
-    <input type="password" id="login-password" placeholder="Contraseña" required>
-    <button type="submit">Iniciar Sesión</button>
-  </form>
-  
+
+    <script src="inicio_sesion.js"></script>
 </body>
 </html>

@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6fff5;
+}
+
+header {
+    text-align: center;
+    padding: 15px;
+    background-color: #04AA6D;
+    color: white;
+    font-size: 2em;
+    border-bottom: 5px solid #a3d2a1;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 50px;
+    box-shadow: 1px 10px 10px 10px #a3d2a1;
+}
+
+/* Estilo para el separador */
+.separador {
+    border-top: 7px solid #1ce268; /* Línea horizontal de color azul */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+
+
+.foto-paciente {
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+table {
+    width: 70%; /* Ajusta el ancho de la tabla aquí */
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+
+table, th, td {
+    border: 6px solid #a3d2a1;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+.accordion {
+    background-color: #04AA6D;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #88f184; 
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.amount {
+    color: #04AA6D;
+    font-weight: bold;
+}

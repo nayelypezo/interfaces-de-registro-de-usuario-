@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://img.freepik.com/foto-gratis/papel-pared-colorido-grafico-2d-degradados-granulados_23-2151001647.jpg?t=st=1715731974~exp=1715735574~hmac=c9862d8ca44ed948dcfe761b9bf129e3f4caf018a7b5720b6ed9a8c7295d2a92&w=360'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-container {
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+}
+
+.formulario {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Efecto 3D */
+    padding: 30px;
+}
+
+.formulario h3 {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #4CAF50; /* Color verde */
+    text-shadow: 12px 2px 5px rgba(11, 255, 31, 0.3); /* Sombra de texto */
+}
+
+.formulario label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #555; /* Color de texto */
+}
+
+.formulario input[type="text"],
+.formulario input[type="number"],
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+.formulario textarea {
+    resize: none;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 12px;
+    font-size: 20px;
+    background-color: #4CAF50; /* Color verde */
+    color: #fff; /* Color blanco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formulario button:hover {
+    background-color: #45a049; /* Cambio de color al pasar el mouse */
+}
+
+.formulario p {
+    text-align: center;
+    margin-top: 90px;
+    color: #555; /* Color de texto */
+}
